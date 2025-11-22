@@ -26,32 +26,24 @@ export interface Workout {
   createdAt?: string;
 }
 
-export interface ProgressLogItemSet {
-  reps?: number;
-  weight?: number;
-  durationSeconds?: number;
-}
 
-export interface ProgressLogItem {
-  exerciseId: string;
-  sets: ProgressLogItemSet[];
-}
-
-export interface ProgressLog {
-  id?: string;
-  userId: string;
-  workoutId?: string;
-  date: string; 
-  items: ProgressLogItem[];
-  notes?: string;
-  totalDurationSeconds?: number;
-  createdAt?: string;
-}
 
 export interface TrainerProfile {
   id: string; 
   bio?: string;
   specialties?: string[];
   clients?: string[]; 
+  createdAt?: string;
+}
+
+export interface Client {
+  id?: string;             
+  userId: string;        
+  name: string;            
+  age?: number;
+  heightCm?: number;
+  weightKg?: number;
+  goals?: string[];
+  assignedTrainerId?: string; 
   createdAt?: string;
 }

@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">72.22% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/18</span>
+                <span class='fraction'>13/18</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">83.33% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/6</span>
+                <span class='fraction'>5/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">76.47% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/17</span>
+                <span class='fraction'>13/17</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -89,53 +89,53 @@
 <a name='L24'></a><a href='#L24'>24</a>
 <a name='L25'></a><a href='#L25'>25</a>
 <a name='L26'></a><a href='#L26'>26</a>
-<a name='L27'></a><a href='#L27'>27</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L27'></a><a href='#L27'>27</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" >import * as repo from "../repositories/firestore.repository";</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import * as repo from "../repositories/firestore.repository";
 import { TrainerProfile } from "../models/types";
 &nbsp;
-const COLLECTION = <span class="cstat-no" title="statement not covered" >"trainers";</span>
+const COLLECTION = "trainers";
 &nbsp;
-<span class="cstat-no" title="statement not covered" >export a</span>sync function <span class="fstat-no" title="function not covered" >createProfile(</span>payload: TrainerProfile) {
-<span class="cstat-no" title="statement not covered" >  return repo.createDoc&lt;TrainerProfile&gt;(COLLECTION, payload);</span>
+export async function createProfile(payload: TrainerProfile) {
+  return repo.createDoc&lt;TrainerProfile&gt;(COLLECTION, payload);
 }
-<span class="cstat-no" title="statement not covered" >export a</span>sync function <span class="fstat-no" title="function not covered" >getProfile(</span>id: string) {
-<span class="cstat-no" title="statement not covered" >  return repo.getDoc(COLLECTION, id);</span>
+export async function getProfile(id: string) {
+  return repo.getDoc(COLLECTION, id);
 }
-<span class="cstat-no" title="statement not covered" >export a</span>sync function <span class="fstat-no" title="function not covered" >listProfiles(</span>) {
-<span class="cstat-no" title="statement not covered" >  return repo.listDocs(COLLECTION);</span>
+export async function listProfiles() {
+  return repo.listDocs(COLLECTION);
 }
-<span class="cstat-no" title="statement not covered" >export a</span>sync function <span class="fstat-no" title="function not covered" >updateProfile(</span>id: string, data: Partial&lt;TrainerProfile&gt;) {
-<span class="cstat-no" title="statement not covered" >  return repo.updateDoc(COLLECTION, id, data);</span>
+export async function updateProfile(id: string, data: Partial&lt;TrainerProfile&gt;) {
+  return repo.updateDoc(COLLECTION, id, data);
 }
-<span class="cstat-no" title="statement not covered" >export a</span>sync function <span class="fstat-no" title="function not covered" >deleteProfile(</span>id: string) {
-<span class="cstat-no" title="statement not covered" >  return repo.deleteDoc(COLLECTION, id);</span>
+export async function deleteProfile(id: string) {
+  return repo.deleteDoc(COLLECTION, id);
 }
-<span class="cstat-no" title="statement not covered" >export a</span>sync function <span class="fstat-no" title="function not covered" >assignClient(</span>trainerId: string, clientId: string) {
+export async function <span class="fstat-no" title="function not covered" >assignClient(</span>trainerId: string, clientId: string) {
   const profile = <span class="cstat-no" title="statement not covered" >await getProfile(trainerId);</span>
   const clients = (<span class="cstat-no" title="statement not covered" >profile?.clients as string[] | undefined) || [];</span>
 <span class="cstat-no" title="statement not covered" >  if (!clients.includes(clientId)) <span class="cstat-no" title="statement not covered" >clients.push(clientId);</span></span>
@@ -148,7 +148,7 @@ const COLLECTION = <span class="cstat-no" title="statement not covered" >"traine
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-11-22T11:34:56.175Z
+                at 2025-11-22T11:41:03.798Z
             </div>
         <script src="../prettify.js"></script>
         <script>

@@ -1,18 +1,27 @@
 import { Request, Response, NextFunction } from "express";
 import * as service from "../services/exercises.service";
 
+function fileToMediaUrl(req: Request) {
+  if (!req.file) return undefined;
+  return `/uploads/${req.file.filename}`;
+}
+
 export async function createExercise(
   req: Request,
   res: Response,
   next: NextFunction
 ) {
   try {
-    const result = await service.createExercise(req.body);
-    res.json(result);
+    const mediaUrl = fileToMediaUrl(req);
+    const payload = { ...req.body } as any;
+    if (mediaUrl) payload.mediaUrl = mediaUrl;
+    const result = await service.createExercise(payload);
+    return res.status(201).json(result);
   } catch (err) {
     next(err);
   }
 }
+
 
 export async function listExercises(
   req: Request,
@@ -47,12 +56,19 @@ export async function updateExercise(
   next: NextFunction
 ) {
   try {
-    const updated = await service.updateExercise(req.params.id, req.body);
-    res.json(updated);
+    const mediaUrl = fileToMediaUrl(req);
+    const payload = { ...req.body } as any;
+    if (mediaUrl) payload.mediaUrl = mediaUrl;
+
+    const updated = await service.updateExercise(req.params.id, payload);
+    if (!updated) return res.status(404).json({ message: 'Not found' });
+    return res.json(updated);
   } catch (err) {
     next(err);
   }
 }
+
+
 
 export async function deleteExercise(
   req: Request,

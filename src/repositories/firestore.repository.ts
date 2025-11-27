@@ -14,7 +14,7 @@ export async function getDoc(collectionName: string, id: string) {
   return { id: snap.id, ...(snap.data() as any) };
 }
 
-export async function listDocs(collectionName: string) {
+export async function listDocs(collectionName: string, opts: { limit?: number; offset?: number; filters?: Record<string, any>; } | undefined) {
   const snaps = await collection(collectionName).get();
   return snaps.docs.map(d => ({ id: d.id, ...(d.data() as any) }));
 }

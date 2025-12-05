@@ -76,7 +76,7 @@
  *
  * /clients/{id}/assign-trainer:
  *   post:
- *     summary: Assign a trainer to a client (updates client's assignedTrainerId)
+ *     summary: Assign a trainer to a client 
  *     tags: [Clients]
  *     parameters:
  *       - in: path

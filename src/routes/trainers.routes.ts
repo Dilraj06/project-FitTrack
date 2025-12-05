@@ -113,7 +113,6 @@
  *         description: Trainer not found
  */
 
-// src/routes/trainers.routes.ts
 import { Router } from "express";
 import * as ctrl from "../controllers/trainers.controller";
 import { validate } from "../middleware/validate.middleware";
